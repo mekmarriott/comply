@@ -1,0 +1,6 @@
+{
+  "name": "Comply",
+  "description": "A patient compliance health platform",
+  "repository": "https://github.com/mekmarriott/comply",
+  "keywords": ["node", "express", "static"]
+}
