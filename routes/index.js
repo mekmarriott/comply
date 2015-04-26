@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET index page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Comply' });
+  res.render('index', { title: 'COMPLY' });
+});
+
+/* GET patient dashboard page. */
+router.get('/home', function(req, res, next) {
+  res.render('home', { title: 'Welcome!' });
 });
 
 /* GET progress page. */
