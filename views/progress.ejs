@@ -4,19 +4,16 @@
 <body>
     <% include navbar %>
  
-    <div class="container">
-        <div class="page-header">
-            <h1>
-                Progress <small> How are you doing so far?</small>
-            </h1>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Progress</div>
-            <div class="panel-body">
-                <p>Show stats here (how patient stacks up to goals). Include page for plan overview?</p>
-            </div>
-        </div>
- 
+    <div class="jumbotron">
+            <h1><%= title %></h1>
+            <p><i>How are you doing so far?</i></p>
+            <p><small>
+            Track your stats, monitor your compliance, and see how you are doing in your set goal path.
+            </small></p>
+    </div>
+
+    <div class="container-fluid">
+        <% include content_progress %>
         <hr>
  
         <% include footer %>
@@ -32,8 +29,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
+
     <!-- Latest compiled and minified JavaScript -->
-    <script
-        src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="/javascripts/bootstrap-datepicker.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+
 </body>
 </html>

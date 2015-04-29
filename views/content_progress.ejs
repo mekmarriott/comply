@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-4">
+        <h2>To-Dos</h2>
+        <p class="text-center"><a id="last-week"><< Previous</a>     <a id="today" >Today</a>     <a id="next-week">Next >></a></p>
+        <div style="text-align: center;" id="datetimepicker" class="input-append date">
+            <input type="text" id="calendar-input"></input>
+            <span class="add-on">
+                <i style="margin-top: -2px;" data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+            </span>
+            </span>
+        </div>
+        </br>
+        <div class="panel panel-default">
+            <div class="panel-heading" id="calendar-heading"></div>
+            <div class="panel-body">
+                <p>No to-dos to show!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-8">
+        <h2>Chart #1</h2>
+        <canvas class="full" id="line-chart"></canvas>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <h2>Chart #2</h2>
+        <canvas class="full" id="bar-chart"></canvas>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <h2>Chart #3</h2>
+        <canvas class="full" id="bar-chart2"></canvas>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+<script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/javascripts/Chart.js"></script>
+<script src="/data/JaneDoe.js"></script>
+
+<script type="text/javascript">
+
+    $('#datetimepicker').datetimepicker({
+        format: 'MM/dd/yyyy',
+        pickTime: false
+    });
+
+    var picker = $('#datetimepicker').data('datetimepicker');
+    changeToDoDate(new Date(Date.now()));
+
+    $('#datetimepicker').on('changeDate', function(e) {
+        changeToDoDate(picker.getLocalDate());
+    });
+    $('#today').on('click', function(e) {
+        changeToDoDate(new Date(Date.now()));
+    });
+    $('#last-week').on('click', function(e) {
+        var lastWeek = picker.getLocalDate();
+        lastWeek.setDate(lastWeek.getDate() - 7);
+        changeToDoDate(lastWeek);
+    });
+    $('#next-week').on('click', function(e) {
+        var nextWeek = picker.getLocalDate();
+        nextWeek.setDate(nextWeek.getDate() + 7);
+        changeToDoDate(nextWeek);
+    });
+
+    function changeToDoDate(date) {
+        picker.setLocalDate(date);
+        $('#calendar-heading').text("Week of " + date.toDateString());
+    }
+
+    var lineChartCanvas = $("#line-chart").get(0).getContext("2d");
+    var lineChart = new Chart(lineChartCanvas).Line(JaneDoe.lineChartData, {});
+    lineChart.draw();
+
+    var barChartCanvas = $("#bar-chart").get(0).getContext("2d");
+    var barChart = new Chart(barChartCanvas).Bar(JaneDoe.barChartData, {});
+    barChart.draw();
+
+    var barChartCanvas2 = $("#bar-chart2").get(0).getContext("2d");
+    var barChart2 = new Chart(barChartCanvas2).Bar(JaneDoe.barChartData, {});
+    barChart2.draw();
+
+</script>
