@@ -10,23 +10,78 @@
                 Medications <small> Keep track of what you're taking</small>
             </h1>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Medications</div>
-            <div class="panel-body">
-                <p>Where we show information about the patient's current medications.</p>
-            </div>
-        </div>
- 
+        
+        <table id="medicationTable" class="display">
+            <thead>
+                <tr>
+                    <th>Medication</th>
+                    <th>Date Prescribed</th>
+                    <th>Prescribed By</th>
+                    <th>Next Prescription Refill Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cefazolin</td>
+                    <td>1/2/2008</td>
+                    <td>Dr. Smith</td>
+                    <td>4/20/2016</td>
+                </tr>
+                <tr>
+                    <td>Heparin</td>
+                    <td>5/4/2012</td>
+                    <td>Dr. King</td>
+                    <td>7/7/2015</td>
+                </tr>
+                <tr>
+                    <td>Amiodarone</td>
+                    <td>5/4/2012</td>
+                    <td>Dr. King</td>
+                    <td>5/7/2015</td>
+                </tr>
+                <tr>
+                    <td>Carvedilol</td>
+                    <td>9/30/2010</td>
+                    <td>Dr. Smith</td>
+                    <td>3/1/2018</td>
+                </tr>
+                <tr>
+                    <td>Asprin</td>
+                    <td>9/30/2000</td>
+                    <td>Dr. Smith</td>
+                    <td>3/1/2018</td>
+                </tr>
+                <tr>
+                    <td>Furosemide</td>
+                    <td>8/9/2014</td>
+                    <td>Dr. Smith</td>
+                    <td>12/22/2016</td>
+                </tr>
+                <tr>
+                    <td>Ondansetron</td>
+                    <td>8/9/2014</td>
+                    <td>Dr. Stein</td>
+                    <td>2/19/2016</td>
+                </tr>
+                <tr>
+                    <td>Phentonyl</td>
+                    <td>8/9/2014</td>
+                    <td>Dr. Stein</td>
+                    <td>5/8/2015</td>
+                </tr>
+                <tr>
+                    <td>Metformin</td>
+                    <td>8/9/2014</td>
+                    <td>Dr. Stein</td>
+                    <td>10/10/2018</td>
+                </tr>
+            </tbody>
+        </table>
+
         <hr>
  
         <% include footer %>
     </div>
-    <!-- /container -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#medications').addClass("active");
-        });
-    </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -35,5 +90,18 @@
     <!-- Latest compiled and minified JavaScript -->
     <script
         src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#medications').addClass("active");
+        });
+        $(document).ready(function(){
+            $('#medicationTable').DataTable();
+        });
+    </script>
+
 </body>
 </html>
