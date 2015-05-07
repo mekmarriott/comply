@@ -10,23 +10,42 @@
                 Upload <small> Evidence-based compliance</small>
             </h1>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">About Us</div>
-            <div class="panel-body">
-                <p>Allow patient to input QR code image, MedID, or do Device Sync here.</p>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <h2 align="center"><br>Upload QR Code</br></h2>
+                <form action="/upload" class="dropzone" drop-zone="" id="file-dropzone">
+                    <h1 align="center"><span class ="glyphicon glyphicon-qrcode"></span></h1>
+                </form>
+                <p>Upload a photo of the QR code from your medication. Our program will analyze and verify the code for you and automatically input a medication event in to your electronic health record.</p>
+
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <h2 align="center"><br>Sync Your Device</br></h2>
+                <h1 align="center"><span class ="glyphicon glyphicon-refresh"></span></h1>
+                <p> If you used the COMPLY application for iOS or Android, make sure your device information is uploaded to the platform.
+                </p>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <h2 align="center"><br>Enter a Code</br></h2>
+                <h1 align="center"><span class="glyphicon glyphicon-pencil"></span></h1>
+                <p>Type in the 14-digit code located on the custom-label on your medication.</p>
+                <div class="col-lg-4">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Enter</button>
+                      </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
             </div>
         </div>
- 
+
         <hr>
  
         <% include footer %>
     </div>
-    <!-- /container -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#upload').addClass("active");
-        });
-    </script>
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -35,5 +54,11 @@
     <!-- Latest compiled and minified JavaScript -->
     <script
         src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="/javascripts/dropzone.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#upload').addClass("active");
+        });
+    </script>
 </body>
 </html>
