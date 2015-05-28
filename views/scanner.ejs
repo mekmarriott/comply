@@ -80,7 +80,6 @@
             if (medIndex != -1) {
                 var medicationName = text.substring(baseURL.length);
                 var notificationText = "Medication " + medicationName + " confirmed to have been taken on COMPLY.";
-                console.log(notificationText);
                 $("#QR-Code").notify( notificationText, {className: "success", position:"top"} );
             }
         }
