@@ -41,4 +41,9 @@ router.get('/settings', function(req, res, next) {
   res.render('settings', { title: 'Settings' });
 });
 
+/* GET QR scanning page. */
+router.get('/scanner', function(req, res, next) {
+  res.render('scanner', { title: 'QR Scanner' });
+});
+
 module.exports = router;
