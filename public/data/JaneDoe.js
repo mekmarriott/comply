@@ -7,7 +7,7 @@ var JaneDoe = {
 	conditions : {},
 
 	lineChartData : {
-	    labels: ["January", "February", "March", "April", "May", "June", "July"],
+	    labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
 	    datasets: [
 	        {
 	            label: "My First dataset",
@@ -32,7 +32,7 @@ var JaneDoe = {
 	    ]
 	},
 	barChartData : {
-	    labels: ["January", "February", "March", "April", "May", "June", "July"],
+	    labels: ["1st week", "2nd week", "3rd week", "4th week", "5th week", "6th week", "7th week"],
 	    datasets: [
 	        {
 	            label: "My First dataset",
